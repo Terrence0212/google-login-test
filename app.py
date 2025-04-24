@@ -67,5 +67,8 @@ def google_callback():
 
     return f"<h1>Google 登入成功</h1><pre>{user_info}</pre>"
 
+import os
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
